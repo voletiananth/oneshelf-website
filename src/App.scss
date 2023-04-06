@@ -1,0 +1,14 @@
+$primary: #A50000;
+a.navbar-brand {
+  color: azure;
+}
+
+div.navbar-nav > a{
+    color: azure;
+    margin: 0 10px;
+  text-decoration: none;
+}
+
+
+
+@import '~bootstrap/scss/bootstrap';

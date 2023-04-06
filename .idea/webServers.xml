@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="07615ca2-6f05-41ad-8452-3e5cf22aa885" name="oneshelf" url="https://oneshelf-capstone.bradley.edu/">
+        <fileTransfer rootFolder="/home/avoleti/one-shelf" accessType="SFTP" host="oneshelf-capstone" port="22" sshConfigId="266e7dbd-f568-4907-ab19-32752431be19" sshConfig="avoleti@oneshelf-capstone:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
