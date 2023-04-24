@@ -3,7 +3,7 @@ class Endpoints {
         return  Endpoints.get_pantries+ pantryId+ "/categories/";
     }
 
-    static get_category_image(imageUrl:string): string {
+    static get_image(imageUrl:string): string {
         return  Endpoints.baseUrl +this.api_client+ imageUrl;
     }
 
@@ -14,7 +14,7 @@ class Endpoints {
 
 
     static get baseUrl(): string {
-        return "https://oneshelf.up.railway.app/";
+        return "http://localhost:2195/";
     }
 
     static get api_client(): string {
@@ -23,6 +23,27 @@ class Endpoints {
 
     static get get_pantries(): string {
         return Endpoints.baseUrl + Endpoints.api_client + "pantry/";
+    }
+
+
+    static add_product_to_cart() {
+        return Endpoints.baseUrl + Endpoints.api_client + "cart/";
+    }
+
+    static update_product_in_cart(cartId:number | undefined) {
+        return Endpoints.baseUrl + Endpoints.api_client + "cart/" + cartId + "/";
+    }
+
+    static get_Cart() {
+        return this.add_product_to_cart()+"details/";
+    }
+
+    static get_slots(pantryId:number){
+        return Endpoints.get_pantries+ pantryId+ "/slots/";
+    }
+
+    static place_order(){
+        return Endpoints.baseUrl + Endpoints.api_client + "order/";
     }
 
 

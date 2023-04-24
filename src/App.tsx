@@ -6,8 +6,12 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Browse from "./browse/Browse";
 import PantryModal from "./Pantry/PantryModal";
-import ProductsView from "./Products/Products";
+import ProductsView from "./browse/ProductsView";
 import {Category} from "./models/Category";
+import CartView from "./Components/CartView";
+import { OrderView } from './Components/OrderView';
+
+
 
 
 const BrowseNavigation = () => {
@@ -24,12 +28,32 @@ const ProductsNavigation = () => {
     const _location = useLocation();
     return (
         <>
-
-
             <ProductsView navigator = {navigate}  selected={_location.state.category as Category} />
         </>
     )
 }
+
+
+const CartNavigation = () => {
+    const navigate = useNavigate();
+    return (
+        <>
+            <CartView navigator = {navigate} />
+        </>
+    )
+}
+
+
+const OrderNavigation = () => {
+    const _location = useLocation();
+
+    return (
+        <>
+            <OrderView order={_location.state.order}/>
+        </>
+            )
+}
+
 
 function App() {
 
@@ -45,9 +69,12 @@ function App() {
                     <Route  path="/home" element={<Home />} />
                     <Route path="/browse" element={<BrowseNavigation  />} />
                     <Route path="/about" element={<About />} />
+                    <Route path={"/:pantryName/products"} element={<ProductsNavigation />}/>
                 </Route>
-                <Route path={"/:pantryName/products"} element={<ProductsNavigation />}/>
+
+                <Route path={"/cart"} element={<CartNavigation />}/>
                 <Route path="*" element={<Navigate to="/" />} />
+                <Route path={"/order"} element={<OrderNavigation/>} />
             </Routes>
         </BrowserRouter>
     </>

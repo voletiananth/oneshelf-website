@@ -1,0 +1,67 @@
+
+
+#container{
+    padding: 16px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#left-container{
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 16px;
+    flex-grow: 1;
+    padding: 16px;
+
+}
+
+#left-container::-webkit-scrollbar, .scrollbar-container::-webkit-scrollbar {
+    width: 0;  /* remove scrollbar space */
+    background: transparent; /* make scrollbar transparent */
+}
+
+#right-container{
+
+    height: 100%;
+    display: inline-block;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+
+.card-container{
+
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+
+.card-container-horizontal{
+    display: flex;
+
+}
+
+.order-details{
+    padding: 16px;
+}
+
+.empty-cart{
+    position: relative;
+    text-align: center;
+   top: 40%;
+}
+
+
+

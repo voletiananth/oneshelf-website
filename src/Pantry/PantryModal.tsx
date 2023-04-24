@@ -1,5 +1,5 @@
 import {Modal,Spinner} from "react-bootstrap";
-import '../Components/Components.css'
+import '../css/Components.css'
 import React from "react";
 import Endpoints from "../Endpoints";
 import axios from "axios";

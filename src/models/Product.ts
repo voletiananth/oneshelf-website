@@ -12,3 +12,8 @@ export interface Product{
     images_details: ProductImage;
 
 }
+
+export interface ProductAndQuantity{
+    product: Product;
+    cart_quantity: number;
+}

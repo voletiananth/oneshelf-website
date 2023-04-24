@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import {Image} from "react-bootstrap";
 
 export default class Home extends Component {
     render() {
         return (
-            <div >
-                <h1>Home</h1>
-                <p>This is home.</p>
+            <div style={{height:"100%"}} >
+                <Image src={"banner.avif"} style={{width:"100%",aspectRatio:'16/9'}}>
+
+                </Image>
             </div>
         )
     }

@@ -1,0 +1,34 @@
+
+#products-view-container{
+ display: flex;
+    flex-direction: row;
+    height: calc(100vh - 80px);
+    margin-top: 24px;
+
+}
+
+#categories-container{
+    height: 100%;
+    flex: 1;
+}
+
+#categories-container .list-group {
+    height: 100%;
+    overflow: scroll;
+}
+
+#categories-container .list-group::-webkit-scrollbar {
+    width: 0;  /* remove scrollbar space */
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+#categories-container .list-group-item{
+    cursor: pointer;
+}
+
+
+#products-container{
+    overflow: scroll;
+    flex: 3;
+}

@@ -10,7 +10,7 @@ import {addCategories, appStore} from "../AppStore";
 
 import {Pantry} from "../models/Pantry";
 import {NavigateFunction} from "react-router";
-
+import '../css/Components.css'
 
 function mapStateToProps(state:AppState)
 {
@@ -90,17 +90,21 @@ class Browse extends React.Component<BrowseProps,State> {
     }
 
 
+    imageStyle = {
+
+        aspectRatio: "16/9",
+
+    }
 
 
 
     renderCard = (card:Category,index:number) => {
 
         return (
-            <Card onClick={()=>{
+            <Card className={'grid-item'} onClick={()=>{
                 this.props.navigator('/'+this.props.pantryState?.name+'/products', {state: {category: card}})
-            }}  style={{width:'16rem'}} key={index}>
-                <Card.Img style={{padding:'16px'}}   variant={"top"} src={Endpoints.get_category_image(card.thumbnail)} >
-
+            }}  style={{width:'auto',height:'auto'}} key={index}>
+                <Card.Img style={this.imageStyle}   variant={"top"} src={Endpoints.get_image(card.thumbnail)} >
                 </Card.Img >
                 <Card.Body style={{textAlign:'center'}}>
                     <Card.Title>{card.name}</Card.Title>
@@ -115,10 +119,10 @@ class Browse extends React.Component<BrowseProps,State> {
 
     render() {
         return (
-            <Container style={{margin:'2rem'}}>
+            <Container style={{margin:'2rem',textAlign:'center',width:'auto'}}>
 
                 {this.state.isLoading ? <div className={"loading-container"}  > <Spinner className={"align-items-center"} /> </div> : null}
-                <Container className={"grid"}>
+                <Container className={"grid-container"}>
                     {this.props.categories.map((card,index) => this.renderCard(card,index))}
                 </Container>
             </Container>
